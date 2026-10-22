@@ -1,0 +1,2 @@
+'use client';
+export default function ErrorPage({reset}:{error:Error;reset:()=>void}) { return <div className="page-shell" style={{paddingBlock:90,textAlign:'center'}}><p className="eyebrow">A little pause</p><h1 className="section-title">We couldn’t load this page.</h1><p style={{marginTop:20}}>Please try again in a moment.</p><button className="button button-primary" onClick={reset}>Try again</button></div>; }
