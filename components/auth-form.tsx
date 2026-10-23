@@ -61,7 +61,7 @@ export default function AuthForm() {
         <button className="button button-primary auth-submit" disabled={busy}>{busy ? "One moment…" : mode === "login" ? "Sign in" : "Create my account"}<ArrowRight size={18} /></button>
       </form>
       <p className="auth-privacy"><ShieldCheck size={16} /> Your details stay private. Your time stays yours.</p>
-      {demoMode && <details className="demo-accounts"><summary>Explore the local demo</summary><p>Use a sample account to try each role. These accounts are for this local development app.</p><div>{["customer", "stylist", "admin"].map(role => <button key={role} type="button" onClick={() => demo(role)}>{role}</button>)}</div><small>Password: BookwiseDemo2026!</small></details>}
+      {demoMode && <details className="demo-accounts"><summary>Explore the demo</summary><p>Use a sample account to try each role. This is a demonstration salon; please use sample details only.</p><div>{["customer", "stylist", "admin"].map(role => <button key={role} type="button" onClick={() => demo(role)}>{role}</button>)}</div><small>Password: BookwiseDemo2026!</small></details>}
       <p className="auth-help">Just browsing? <Link href="/services">Explore our services <ArrowRight size={14} /></Link></p>
     </section>
   </div>;

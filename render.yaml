@@ -1,0 +1,25 @@
+# Public demonstration service. No payment details or real customer data.
+# The free instance has an ephemeral database: data may reset on restart/deploy.
+services:
+  - type: web
+    name: bookwise-demo
+    runtime: node
+    plan: free
+    branch: bookwise-website
+    buildCommand: npm ci --include=dev --no-audit --no-fund && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/catalog
+    autoDeploy: false
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: BOOKWISE_DB_PATH
+        value: /tmp/bookwise/bookwise.sqlite
+      - key: BOOKWISE_DEMO_MODE
+        value: "true"
+      - key: BOOKWISE_SECURE_COOKIES
+        value: "true"

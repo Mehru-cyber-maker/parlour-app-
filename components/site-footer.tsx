@@ -7,5 +7,5 @@ export default function SiteFooter() {
     <div><h3>Explore</h3><Link href="/services">Our services</Link><Link href="/about">Our story</Link><Link href="/book">Book an appointment <ArrowUpRight size={13} /></Link><Link href="/account">My bookings</Link></div>
     <div><h3>Say hello</h3><p>24 Main Boulevard,<br />Gulberg, Lahore</p><a href="tel:+923001234567">+92 300 123 4567</a><a href="mailto:hello@bookwise.example">hello@bookwise.example</a></div>
     <div><h3>Studio hours</h3><p>Monday – Saturday<br /><strong>9:00 am – 6:00 pm</strong></p><p>Sunday<br />A little rest, for us too.</p></div>
-  </div><div className="footer-bottom"><span>© {new Date().getFullYear()} BookWise Studio. A little more you.</span><span>Demo salon · Appointments are for demonstration.</span><Link href="/policies">Privacy & policies</Link></div></div></footer>;
+  </div><div className="footer-bottom"><span>© {new Date().getFullYear()} BookWise Studio. A little more you.</span><span>Demo salon · Sample bookings only. Demo data may reset.</span><Link href="/policies">Privacy & policies</Link></div></div></footer>;
 }

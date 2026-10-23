@@ -2,6 +2,14 @@
 
 A full-stack salon booking application built from `BookWise_Guide.pdf`. Includes a responsive salon website, searchable service menu, stylist selection, real availability, account registration, booking receipts and calendar downloads, customer appointment management, and role-scoped staff dashboards.
 
+## Show the website publicly
+
+[Public demo deployment guide](docs/DEPLOYMENT.md) · [Render configuration](render.yaml)
+
+Deploy the `bookwise-website` branch as a Node web service, then add its verified HTTPS address to the README and the GitHub repository’s **About → Website** field. GitHub Pages cannot run this app’s database and booking API. The free Render demo configuration uses temporary storage: sample accounts, sessions, and bookings may reset when the service restarts. No public website URL has been created just by adding these files.
+
+![BookWise website preview](docs/bookwise-preview.png)
+
 ## Run locally
 
 Requires Node.js 24 or later (uses the built-in `node:sqlite` driver).
@@ -27,7 +35,7 @@ Stop the development server before running a production build; both use `.next`.
 
 ## Try the three roles
 
-Open Sign in, expand **Explore the local demo**, and select a role. These sample accounts are available by default in development:
+Open Sign in, expand **Explore the demo**, and select a role. These sample accounts are available by default in development:
 
 | Role | Email |
 | --- | --- |
