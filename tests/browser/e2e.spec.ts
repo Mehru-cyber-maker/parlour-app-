@@ -147,3 +147,34 @@ test('a guest keeps their stylist, time, and note through sign-in', async ({ pag
   await appointment.getByRole('button', { name: 'Yes, cancel', exact: true }).click();
   await expect(page.getByText('Your appointment has been cancelled.')).toBeVisible();
 });
+
+test('a newly registered customer can sign out and sign in with their own credentials', async ({ page }) => {
+  const email = `new-login-${Date.now()}@example.test`;
+  const password = 'CustomerLoginTest2026!';
+  await page.goto('/login');
+  await page.getByRole('button', { name: 'Create account', exact: true }).click();
+  await page.getByLabel('Full name').fill('New Customer');
+  await page.getByLabel('Email address').fill(email);
+  await page.getByLabel('Password', { exact: true }).fill(password);
+  await page.getByRole('button', { name: 'Create my account' }).click();
+  await expect(page).toHaveURL(/\/account$/);
+  await expect(page.getByRole('heading', { name: /Hello, New/ })).toBeVisible();
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await expect(page).toHaveURL(/\/$/);
+  const signedOut = await (await page.request.get('/api/auth/me')).json();
+  expect(signedOut.user).toBeNull();
+
+  await page.goto('/login');
+  await page.getByLabel('Email address').fill(email);
+  await page.getByLabel('Password', { exact: true }).fill('IncorrectPassword2026!');
+  await page.locator('form').getByRole('button', { name: 'Sign in', exact: true }).click();
+  await expect(page.locator('.auth-panel').getByRole('alert')).toHaveText('The email or password is incorrect.');
+  await page.getByLabel('Password', { exact: true }).fill(password);
+  await page.locator('form').getByRole('button', { name: 'Sign in', exact: true }).click();
+  await expect(page).toHaveURL(/\/account$/);
+  await expect(page.getByText(email, { exact: true })).toBeVisible();
+  const authenticated = await (await page.request.get('/api/auth/me')).json();
+  expect(authenticated.user.email).toBe(email);
+  expect(authenticated.user.role).toBe('customer');
+  expect((await page.request.get('/api/dashboard')).status()).toBe(403);
+});

@@ -35,6 +35,15 @@ From the Codespaces terminal in the repository directory:
 bash .devcontainer/start-demo.sh
 ```
 
-The command reuses an already responding BookWise server. Logs are in `/tmp/bookwise-codespaces-3000.log`. If application code changed, stop only the BookWise process you started, run `npm run build`, and start it again. Do not run a build while a development server is active.
+To update the running Codespace after new code is pushed to GitHub:
+
+```bash
+git pull --ff-only
+bash .devcontainer/start-demo.sh --restart
+```
+
+The restart option identifies the BookWise service on its port, stops that service, builds the current code, and starts the updated server. It keeps the `.data` database and does not reinstall dependencies or delete accounts. The dev container image includes the `fuser` utility used for stopping the listening server; the script stops with instructions if the utility is unavailable.
+
+Without `--restart`, the command reuses an already responding BookWise server. Logs are in `/tmp/bookwise-codespaces-3000.log`. If application code changed, stop only the BookWise process you started, run `npm run build`, and start it again. Do not run a build while a development server is active.
 
 Official references: [Codespaces port forwarding](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace) and [Codespaces billing](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces).
