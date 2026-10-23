@@ -66,7 +66,7 @@ After the actual URL passes the checks above:
 3. On the repository home page, click the gear beside **About**, paste the same address into **Website**, and save.
 4. Keep `bookwise-website` selected when sharing the source, since the project is on that branch.
 
-No live URL is included in this repository until an actual service has been created and verified. Adding configuration or pushing to GitHub does not itself deploy the website.
+The root README includes the current temporary Codespaces preview address. Creating a separate hosted service is optional. Adding Render configuration or pushing to GitHub does not itself create a Render deployment.
 
 ## Durable hosting for real data
 

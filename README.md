@@ -1,5 +1,9 @@
 # BookWise
 
+**[Open Live Demo →](https://urban-acorn-vpgw5xj99qw42w94r-3000.app.github.dev/)**
+
+This is a temporary public Codespaces preview. The demo is available while its Codespace is running; if the link stops responding, the owner must resume the Codespace and start the website. Use sample information only.
+
 A full-stack salon booking application built from `BookWise_Guide.pdf`. Includes a responsive salon website, searchable service menu, stylist selection, real availability, account registration, booking receipts and calendar downloads, customer appointment management, and role-scoped staff dashboards.
 
 ## Show the website publicly
