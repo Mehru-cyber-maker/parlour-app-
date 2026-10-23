@@ -4,9 +4,11 @@ A full-stack salon booking application built from `BookWise_Guide.pdf`. Includes
 
 ## Show the website publicly
 
-[Public demo deployment guide](docs/DEPLOYMENT.md) · [Render configuration](render.yaml)
+[Open preview in GitHub Codespaces](https://codespaces.new/Mehru-cyber-maker/parlour-app-?ref=bookwise-website) · [Sharing instructions](docs/CODESPACES.md) · [Hosted deployment guide](docs/DEPLOYMENT.md)
 
-Deploy the `bookwise-website` branch as a Node web service, then add its verified HTTPS address to the README and the GitHub repository’s **About → Website** field. GitHub Pages cannot run this app’s database and booking API. The free Render demo configuration uses temporary storage: sample accounts, sessions, and bookings may reset when the service restarts. No public website URL has been created just by adding these files.
+For a temporary interactive preview, open the `bookwise-website` branch in Codespaces using your account’s available allowance, then make port 3000 public. The app starts automatically after setup. The shared website works while the Codespace is running; it is not always-on hosting. Add only its verified forwarded HTTPS address as a Live Demo link.
+
+For hosted deployment, use a Node web service. GitHub Pages cannot run this app’s database and booking API. Render may require card verification even when selecting a free service; availability depends on your account. Its demo configuration uses temporary storage, so accounts, sessions, and bookings may reset. No public website URL is created merely by adding configuration files.
 
 ![BookWise website preview](docs/bookwise-preview.png)
 

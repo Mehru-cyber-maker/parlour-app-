@@ -1,3 +1,4 @@
+# Free-plan availability and card verification depend on your Render account.
 # Public demonstration service. No payment details or real customer data.
 # The free instance has an ephemeral database: data may reset on restart/deploy.
 services:

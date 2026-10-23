@@ -1,0 +1,14 @@
+{
+  "name": "BookWise preview",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:5.2.3-24-bookworm",
+  "remoteUser": "node",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "BookWise website",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "npm ci --include=dev --cache /tmp/bookwise-npm-cache --no-audit --no-fund && npm run build",
+  "postStartCommand": "bash .devcontainer/start-demo.sh"
+}

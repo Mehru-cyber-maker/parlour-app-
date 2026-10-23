@@ -4,6 +4,10 @@ GitHub stores the source code and can show a link to your demo. The running Book
 
 The repository includes `render.yaml` for a free **demonstration** web service. The hosted database is temporary: accounts, sessions, service edits, and bookings can reset after a restart, redeployment, or instance replacement. Free services may sleep when idle, so the first visit can take longer. Check Render's current free-plan terms during setup; do not select a paid plan unless you intend to pay.
 
+## If Render asks for a payment card
+
+Render can require payment-card verification even when a service is configured as free. The blueprint is not a guarantee of card-free signup. You may try creating **New → Web Service** manually and selecting **Free**, using the settings below. If your account still requires billing details, stop: there is no bypass supplied by this project. Use the [temporary GitHub Codespaces preview](CODESPACES.md) with your account’s available allowance instead.
+
 ## Create the hosted service
 
 1. Open [Render](https://dashboard.render.com/) and sign in, or create an account.
